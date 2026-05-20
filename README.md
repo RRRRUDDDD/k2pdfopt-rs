@@ -93,7 +93,7 @@ tesseract --list-langs    # 应能列出已装语言
 ### 第 3 步：编译 k2pdfopt-rs
 
 ```sh
-git clone <repo-url>
+https://github.com/RRRRUDDDD/k2pdfopt-rs.git
 cd k2pdfopt-rs
 cargo build --release
 ```
