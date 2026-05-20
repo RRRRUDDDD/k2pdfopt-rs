@@ -1,0 +1,25 @@
+[package]
+name = "k2pdfopt"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "k2pdfopt-rs CLI binary - Rust rewrite placeholder"
+default-run = "k2pdfopt"
+
+[lints]
+workspace = true
+
+[[bin]]
+name = "k2pdfopt"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+k2cli = { path = "../../crates/k2cli" }
+k2settings = { path = "../../crates/k2settings" }
+k2pipeline = { path = "../../crates/k2pipeline" }
+k2ocr = { path = "../../crates/k2ocr" }
+anyhow = "1"
+indicatif = "0.18"
+ctrlc = "3.5"

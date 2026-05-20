@@ -1,0 +1,27 @@
+# k2pdfopt-rs clippy 阈值配置（与 ADR-008 / ADR-012 一致）
+#
+# Clippy lint **level**（warn/deny）在 `Cargo.toml` 的 `[workspace.lints.clippy]` 配置；
+# 本文件只放 lint 的**阈值参数**。
+#
+# 参考：https://doc.rust-lang.org/clippy/configuration.html
+
+# 与 [workspace.package] rust-version 对齐
+msrv = "1.75"
+
+# 移植 C 大函数时不宜过早 split；阈值适度宽松，但仍会捕获显著超标
+cognitive-complexity-threshold = 30
+too-many-arguments-threshold = 9
+too-many-lines-threshold = 200
+type-complexity-threshold = 250
+
+# enum 体积上限（避免 OutputPage / OcrEvent 等 enum 不知不觉变巨大）
+enum-variant-size-threshold = 200
+trivial-copy-size-limit = 16
+
+# 避免使用易混淆的字面量
+literal-representation-threshold = 16384
+
+# 允许少量缩写（OCR/PDF/DPI 在文档高频出现）
+doc-valid-idents = ["MuPDF", "PostScript", "OCR", "TSV", "PAM", "PPM", "DPI", "SSIM", "DjVu", "PDFium", "MASTERINFO"]
+
+# 暂不启用 disallowed-methods（M1 起步后再按需禁用 fs::canonicalize 之类，具体见 ADR-011）

@@ -1,0 +1,146 @@
+[
+  {
+    "name": "single-column.pdf",
+    "source_url": "self-generated: RFC/IETF-style single-column fixture",
+    "license": "CC0-1.0",
+    "pages": 1,
+    "characteristics": [
+      "single-column",
+      "text",
+      "portrait"
+    ],
+    "expected_hash": "sha256:fb42ca7ae706f62ddd4026ecd0658ff1bef5f663795930f05e3dd752ae2cdf72"
+  },
+  {
+    "name": "two-column.pdf",
+    "source_url": "self-generated: arXiv-style two-column fixture",
+    "license": "CC0-1.0",
+    "pages": 2,
+    "characteristics": [
+      "two-column",
+      "academic",
+      "portrait"
+    ],
+    "expected_hash": "sha256:2daac876984c70719f4b7c76fef6ee0646641d9766d6a672246f1d399a6a3acf"
+  },
+  {
+    "name": "three-column.pdf",
+    "source_url": "self-generated: newspaper-style three-column fixture",
+    "license": "CC0-1.0",
+    "pages": 1,
+    "characteristics": [
+      "three-column",
+      "newspaper",
+      "landscape"
+    ],
+    "expected_hash": "sha256:ef4b755111f48f6d1a1181ed43be935ebf7ffc424c22c3efc45bb3a1661fa6a1"
+  },
+  {
+    "name": "scanned.pdf",
+    "source_url": "self-generated: archive.org-style scanned-page placeholder",
+    "license": "CC0-1.0",
+    "pages": 1,
+    "characteristics": [
+      "scan",
+      "image-blocks",
+      "portrait"
+    ],
+    "expected_hash": "sha256:3c5e2dfc5f879bd49dedfc0e090e57cf290f00ec089c95f8c0f075f09101515f"
+  },
+  {
+    "name": "skewed-scan.pdf",
+    "source_url": "self-generated: skewed/rotated scan placeholder",
+    "license": "CC0-1.0",
+    "pages": 1,
+    "characteristics": [
+      "scan",
+      "skewed",
+      "rotated"
+    ],
+    "expected_hash": "sha256:1bcdcdd00cb5eced49a11f3cd16252cd687f9544c4582edda992b7aef05d7db9"
+  },
+  {
+    "name": "mixed-text-image.pdf",
+    "source_url": "self-generated: Wikipedia-style text/image layout",
+    "license": "CC0-1.0",
+    "pages": 1,
+    "characteristics": [
+      "mixed",
+      "text",
+      "image"
+    ],
+    "expected_hash": "sha256:51a85e60fc8928d882229eb7e8f8bd8b798abc7ed13bd54bec1c8c84e0e9dfb5"
+  },
+  {
+    "name": "blank-page.pdf",
+    "source_url": "self-generated: blank-page fixture",
+    "license": "CC0-1.0",
+    "pages": 1,
+    "characteristics": [
+      "blank",
+      "edge-case"
+    ],
+    "expected_hash": "sha256:c25bf8fd14d0a8587307054e632433ec932cf5101ead7a3da6af76f10ee05665"
+  },
+  {
+    "name": "complex-layout.pdf",
+    "source_url": "self-generated: complex layout with sidebar/footnote boxes",
+    "license": "CC0-1.0",
+    "pages": 1,
+    "characteristics": [
+      "complex-layout",
+      "sidebar",
+      "header",
+      "footnote"
+    ],
+    "expected_hash": "sha256:f2d3458fc1704510fd9429346ba9a7532e11b22ae75c20ed61f825b1f04b7577"
+  },
+  {
+    "name": "chinese.pdf",
+    "source_url": "self-generated placeholder; target real source: public-domain Chinese Tao Te Ching / Gutenberg-style text",
+    "license": "CC0-1.0",
+    "pages": 1,
+    "characteristics": [
+      "chinese",
+      "cjk",
+      "text"
+    ],
+    "expected_hash": "sha256:4c15ebdc80e3982e984a8167962bc495e920fb8f53591c8423daa59c9c46370c"
+  },
+  {
+    "name": "formula.pdf",
+    "source_url": "self-generated: formula-heavy academic placeholder",
+    "license": "CC0-1.0",
+    "pages": 1,
+    "characteristics": [
+      "formula",
+      "math",
+      "academic"
+    ],
+    "expected_hash": "sha256:53b2b8322c0f23a5dd8a461875991088066466ba73521b6785b57b99be48ef09"
+  },
+  {
+    "name": "cover.pdf",
+    "source_url": "self-generated: sparse cover-page fixture",
+    "license": "CC0-1.0",
+    "pages": 1,
+    "characteristics": [
+      "cover",
+      "sparse",
+      "image-block"
+    ],
+    "expected_hash": "sha256:1718b414eea9cec13674f3595bd9b7f2d6ba020369c0e1d9886802c21b3266e1"
+  },
+  {
+    "name": "encrypted.pdf",
+    "source_url": "self-generated from simple PDF via mutool clean -E aes-256 -U test -O test",
+    "license": "CC0-1.0",
+    "pages": 1,
+    "characteristics": [
+      "encrypted",
+      "password:test",
+      "aes-256"
+    ],
+    "expected_hash": "sha256:9426e5e1141a93339a9521d8971b24e133659d9e9e66eb305a5e1fb476c7656d"
+  }
+]

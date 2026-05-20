@@ -1,0 +1,21 @@
+[package]
+name = "gen-assets"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "Generate shell completions (bash/zsh/powershell/fish/elvish) and roff man page from k2cli CliArgs (Step 10.2)"
+
+[lints]
+workspace = true
+
+[[bin]]
+name = "gen_assets"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+clap_complete = "4"
+clap_mangen = "0.3"
+k2cli = { path = "../../crates/k2cli" }

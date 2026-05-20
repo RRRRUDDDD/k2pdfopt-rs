@@ -1,0 +1,23 @@
+[package]
+name = "k2layout"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "k2pdfopt-rs layout analysis & reflow: regions, rows, words, wrap, breakpoints, MASTERINFO 8 buckets"
+
+[lints]
+workspace = true
+
+[dependencies]
+k2types = { path = "../k2types" }
+k2core = { path = "../k2core" }
+# Step 11.5: 依赖 k2ocr / k2settings 让 reflow_pipeline.process_region 在
+# `ReflowOutcome::TextReflowed` 路径内联触发 OCR（figure / skip / direct_blit 不跑）。
+# k2ocr -> 反向不依赖 k2layout / k2settings -> 仅依赖 anyhow，二者均无循环依赖。
+# Open Question 11.5.B 推迟 v0.3 评估是否引入轻量 OcrTrigger struct 解耦 Step 6.x 同源约定。
+k2ocr = { path = "../k2ocr" }
+k2settings = { path = "../k2settings" }
+thiserror = "1"
+
+[dev-dependencies]

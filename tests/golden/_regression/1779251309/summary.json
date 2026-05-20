@@ -1,0 +1,93 @@
+{
+  "timestamp_unix": 1779251309,
+  "mode": "SelfCompare",
+  "dpi": 150,
+  "min_ssim": 0.95,
+  "fixtures": [
+    {
+      "name": "single-column",
+      "status": "ok",
+      "overall_ssim": 1.0,
+      "pages_compared": 2,
+      "error": null
+    },
+    {
+      "name": "two-column",
+      "status": "ok",
+      "overall_ssim": 1.0,
+      "pages_compared": 3,
+      "error": null
+    },
+    {
+      "name": "three-column",
+      "status": "ok",
+      "overall_ssim": 1.0,
+      "pages_compared": 3,
+      "error": null
+    },
+    {
+      "name": "scanned",
+      "status": "ok",
+      "overall_ssim": 1.0,
+      "pages_compared": 2,
+      "error": null
+    },
+    {
+      "name": "skewed-scan",
+      "status": "ok",
+      "overall_ssim": 1.0,
+      "pages_compared": 1,
+      "error": null
+    },
+    {
+      "name": "mixed-text-image",
+      "status": "ok",
+      "overall_ssim": 1.0,
+      "pages_compared": 2,
+      "error": null
+    },
+    {
+      "name": "blank-page",
+      "status": "skipped",
+      "overall_ssim": 0.0,
+      "pages_compared": 0,
+      "error": "mutool draw 失败 (exit=Some(1)): argument error: invalid page number: -1\r\ncannot draw 'tests/golden\\blank-page\\c-output.pdf'"
+    },
+    {
+      "name": "complex-layout",
+      "status": "ok",
+      "overall_ssim": 1.0,
+      "pages_compared": 2,
+      "error": null
+    },
+    {
+      "name": "chinese",
+      "status": "ok",
+      "overall_ssim": 1.0,
+      "pages_compared": 2,
+      "error": null
+    },
+    {
+      "name": "formula",
+      "status": "ok",
+      "overall_ssim": 1.0,
+      "pages_compared": 2,
+      "error": null
+    },
+    {
+      "name": "cover",
+      "status": "ok",
+      "overall_ssim": 1.0,
+      "pages_compared": 1,
+      "error": null
+    },
+    {
+      "name": "encrypted",
+      "status": "ok",
+      "overall_ssim": 1.0,
+      "pages_compared": 1,
+      "error": null
+    }
+  ],
+  "overall_pass": true
+}

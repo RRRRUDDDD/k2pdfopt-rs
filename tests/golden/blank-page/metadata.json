@@ -1,0 +1,10 @@
+{
+  "fixture": "blank-page",
+  "c_output_pages": 0,
+  "c_output_bytes": 436,
+  "c_output_md5": "b1b40c89bc5786e7fd91a65a0ad00484",
+  "k2pdfopt_version": "k2pdfopt v2.55 (w/MuPDF,DjVuLibre,OCR) (c) 2023, GPLv3, http://willus.com",
+  "mutool_version": "mutool version 1.27.0",
+  "generated_at": "unix+1778565693",
+  "note": "blank-page fixture: k2pdfopt produces 0-page output"
+}

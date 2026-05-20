@@ -1,0 +1,33 @@
+[package]
+name = "k2ocr"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "k2pdfopt-rs OCR engine trait, Tesseract CLI adapter (default) and optional leptess FFI"
+
+[lints]
+workspace = true
+
+[features]
+# 默认实现：tesseract 命令行 (ADR-017 MVP)。无第三方 native 依赖，仅需用户机器上 tesseract 二进制可用。
+default = []
+# 可选 leptess FFI 实现 (ADR-017 撤回条件触发时再启用)。
+# Step 9.1 阶段仅暴露占位 LeptessEngine 类型 (始终返回 OcrError::FeatureDisabled);
+# 真正引入 leptess 0.14 crate 与 vcpkg 链接配置推迟 M7 末。
+leptess = []
+
+[dependencies]
+k2types = { path = "../k2types" }
+image = { version = "0.25", default-features = false, features = ["png"] }
+thiserror = "1"
+
+# Step 11.8 P0-5 OCR Ctrl-C：Unix 下 SIGINT kill tesseract 子进程。
+# Windows 路径用 std `Child::kill`（WinAPI TerminateProcess 等价），不需要 nix。
+# 联网核验：`cargo search nix` -> 0.31.3 latest（执行计划字面 0.29 已过时两版，
+# 按 R6 优先用 latest stable；features=["signal"] 仍在最新版可用）。Open Q 11.8.A。
+[target.'cfg(unix)'.dependencies]
+nix = { version = "0.31", features = ["signal"] }
+
+[dev-dependencies]
+k2core = { path = "../k2core" }

@@ -1,0 +1,93 @@
+{
+  "timestamp_unix": 1779265496,
+  "mode": "RustVsC",
+  "dpi": 150,
+  "min_ssim": 0.95,
+  "fixtures": [
+    {
+      "name": "single-column",
+      "status": "error",
+      "overall_ssim": 0.0,
+      "pages_compared": 0,
+      "error": "rust-vs-c 模式需要 tests/golden\\single-column\\rs-output.pdf, 当前缺失（M5 起 Rust 端 PDF 输出落地后生成）"
+    },
+    {
+      "name": "two-column",
+      "status": "error",
+      "overall_ssim": 0.0,
+      "pages_compared": 0,
+      "error": "rust-vs-c 模式需要 tests/golden\\two-column\\rs-output.pdf, 当前缺失（M5 起 Rust 端 PDF 输出落地后生成）"
+    },
+    {
+      "name": "three-column",
+      "status": "error",
+      "overall_ssim": 0.0,
+      "pages_compared": 0,
+      "error": "rust-vs-c 模式需要 tests/golden\\three-column\\rs-output.pdf, 当前缺失（M5 起 Rust 端 PDF 输出落地后生成）"
+    },
+    {
+      "name": "scanned",
+      "status": "error",
+      "overall_ssim": 0.0,
+      "pages_compared": 0,
+      "error": "rust-vs-c 模式需要 tests/golden\\scanned\\rs-output.pdf, 当前缺失（M5 起 Rust 端 PDF 输出落地后生成）"
+    },
+    {
+      "name": "skewed-scan",
+      "status": "error",
+      "overall_ssim": 0.0,
+      "pages_compared": 0,
+      "error": "rust-vs-c 模式需要 tests/golden\\skewed-scan\\rs-output.pdf, 当前缺失（M5 起 Rust 端 PDF 输出落地后生成）"
+    },
+    {
+      "name": "mixed-text-image",
+      "status": "error",
+      "overall_ssim": 0.0,
+      "pages_compared": 0,
+      "error": "rust-vs-c 模式需要 tests/golden\\mixed-text-image\\rs-output.pdf, 当前缺失（M5 起 Rust 端 PDF 输出落地后生成）"
+    },
+    {
+      "name": "blank-page",
+      "status": "error",
+      "overall_ssim": 0.0,
+      "pages_compared": 0,
+      "error": "rust-vs-c 模式需要 tests/golden\\blank-page\\rs-output.pdf, 当前缺失（M5 起 Rust 端 PDF 输出落地后生成）"
+    },
+    {
+      "name": "complex-layout",
+      "status": "error",
+      "overall_ssim": 0.0,
+      "pages_compared": 0,
+      "error": "rust-vs-c 模式需要 tests/golden\\complex-layout\\rs-output.pdf, 当前缺失（M5 起 Rust 端 PDF 输出落地后生成）"
+    },
+    {
+      "name": "chinese",
+      "status": "error",
+      "overall_ssim": 0.0,
+      "pages_compared": 0,
+      "error": "rust-vs-c 模式需要 tests/golden\\chinese\\rs-output.pdf, 当前缺失（M5 起 Rust 端 PDF 输出落地后生成）"
+    },
+    {
+      "name": "formula",
+      "status": "error",
+      "overall_ssim": 0.0,
+      "pages_compared": 0,
+      "error": "rust-vs-c 模式需要 tests/golden\\formula\\rs-output.pdf, 当前缺失（M5 起 Rust 端 PDF 输出落地后生成）"
+    },
+    {
+      "name": "cover",
+      "status": "error",
+      "overall_ssim": 0.0,
+      "pages_compared": 0,
+      "error": "rust-vs-c 模式需要 tests/golden\\cover\\rs-output.pdf, 当前缺失（M5 起 Rust 端 PDF 输出落地后生成）"
+    },
+    {
+      "name": "encrypted",
+      "status": "error",
+      "overall_ssim": 0.0,
+      "pages_compared": 0,
+      "error": "rust-vs-c 模式需要 tests/golden\\encrypted\\rs-output.pdf, 当前缺失（M5 起 Rust 端 PDF 输出落地后生成）"
+    }
+  ],
+  "overall_pass": false
+}

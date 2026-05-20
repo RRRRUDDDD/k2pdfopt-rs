@@ -1,0 +1,52 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 1055 >>
+stream
+q
+50 620 m 520 620 l S
+50 590 m 520 590 l S
+BT /F1 14 Tf
+50 782 Td (Formula fixture) Tj
+0 -18 Td (Fixture for k2pdfopt Rust rewrite) Tj
+0 -18 Td (1. E = mc^2, integral, matrices, symbols approximated in text) Tj
+0 -18 Td (2. E = mc^2, integral, matrices, symbols approximated in text) Tj
+0 -18 Td (3. E = mc^2, integral, matrices, symbols approximated in text) Tj
+0 -18 Td (4. E = mc^2, integral, matrices, symbols approximated in text) Tj
+0 -18 Td (5. E = mc^2, integral, matrices, symbols approximated in text) Tj
+0 -18 Td (6. E = mc^2, integral, matrices, symbols approximated in text) Tj
+0 -18 Td (7. E = mc^2, integral, matrices, symbols approximated in text) Tj
+0 -18 Td (8. E = mc^2, integral, matrices, symbols approximated in text) Tj
+0 -18 Td (9. E = mc^2, integral, matrices, symbols approximated in text) Tj
+0 -18 Td (10. E = mc^2, integral, matrices, symbols approximated in text) Tj
+0 -18 Td (11. E = mc^2, integral, matrices, symbols approximated in text) Tj
+0 -18 Td (12. E = mc^2, integral, matrices, symbols approximated in text) Tj
+ET
+Q
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000191 00000 n 
+0000001298 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1424
+%%EOF

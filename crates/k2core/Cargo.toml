@@ -1,0 +1,15 @@
+[package]
+name = "k2core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "k2pdfopt-rs core: bitmap, rect, histogram, preprocess, deskew, autocrop"
+
+[lints]
+workspace = true
+
+[dependencies]
+k2types = { path = "../k2types" }
+image = { version = "0.25", default-features = false, features = ["png"] }
+thiserror = "1"

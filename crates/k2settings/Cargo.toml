@@ -1,0 +1,13 @@
+[package]
+name = "k2settings"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "k2pdfopt-rs settings model, device profile, page list and bidirectional serialize"
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow = "1"

@@ -1,0 +1,105 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+env:
+  CARGO_TERM_COLOR: always
+  RUST_BACKTRACE: short
+  # 阻止 Cargo 在 CI 上自动 fetch 增量数据，提速并确保 lockfile 不漂移
+  CARGO_INCREMENTAL: 0
+  CARGO_NET_RETRY: 5
+  RUSTUP_MAX_RETRIES: 5
+
+jobs:
+  # 单独的 lint job：fmt + clippy 都很快，不需要跑三平台
+  lint:
+    name: fmt + clippy (ubuntu)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust toolchain (from rust-toolchain.toml)
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+
+      - name: Print toolchain
+        run: |
+          cargo --version
+          rustc --version
+          rustfmt --version
+          cargo clippy --version
+
+      - name: Cache cargo registry + target
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: k2pdfopt-rs
+          save-if: ${{ github.ref == 'refs/heads/main' }}
+
+      - name: cargo fmt --check
+        working-directory: k2pdfopt-rs
+        run: cargo fmt --all -- --check
+
+      - name: cargo clippy -D warnings
+        working-directory: k2pdfopt-rs
+        run: cargo clippy --workspace --all-targets -- -D warnings
+
+  # 跨平台编译 + 测试矩阵（ADR-012 license matrix 要求 Win/Linux/macOS 都跑）
+  build-test:
+    name: build + test (${{ matrix.os }})
+    needs: lint
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust toolchain (from rust-toolchain.toml)
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache cargo registry + target
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: k2pdfopt-rs
+          key: ${{ matrix.os }}
+          save-if: ${{ github.ref == 'refs/heads/main' }}
+
+      - name: cargo build --workspace
+        working-directory: k2pdfopt-rs
+        run: cargo build --workspace --all-targets --locked
+
+      - name: cargo test --workspace
+        working-directory: k2pdfopt-rs
+        run: cargo test --workspace --all-targets --locked
+
+      - name: cargo doc (no-deps, warnings as errors)
+        working-directory: k2pdfopt-rs
+        env:
+          RUSTDOCFLAGS: -D warnings
+        run: cargo doc --workspace --no-deps --document-private-items
+
+  # M0 阶段不强制要求；保留为 release-build 烟雾测试。--release 比 dev profile 更能暴露问题。
+  release-smoke:
+    name: release smoke (ubuntu)
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: k2pdfopt-rs
+          key: release
+          save-if: ${{ github.ref == 'refs/heads/main' }}
+      - name: cargo build --release
+        working-directory: k2pdfopt-rs
+        run: cargo build --workspace --release --locked
+      - name: smoke test --help
+        working-directory: k2pdfopt-rs
+        run: cargo run --release --quiet --bin k2pdfopt -- --help

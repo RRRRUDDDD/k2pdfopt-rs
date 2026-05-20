@@ -1,0 +1,27 @@
+# k2pdfopt-rs rustfmt 配置（与 ADR-012 / Step 2.2 一致）
+#
+# 仅启用 stable rustfmt 支持的选项，避免 CI 日志被 "unstable feature" Warning 刷屏。
+# 切到 nightly 时，把下面 [nightly] 区块的注释取消并加 `unstable_features = true`。
+
+# ===== 稳定选项（stable rustfmt 1.9+）=====
+edition = "2021"
+max_width = 100
+hard_tabs = false
+tab_spaces = 4
+newline_style = "Unix"
+use_small_heuristics = "Default"
+fn_params_layout = "Tall"
+match_block_trailing_comma = false
+remove_nested_parens = true
+reorder_imports = true
+reorder_modules = true
+
+# ===== [nightly] 不稳定选项 — 切 nightly 时启用 =====
+# unstable_features = true
+# imports_granularity = "Crate"
+# group_imports = "StdExternalCrate"
+# wrap_comments = true
+# comment_width = 100
+# format_code_in_doc_comments = true
+# trailing_comma = "Vertical"
+# trailing_semicolon = true

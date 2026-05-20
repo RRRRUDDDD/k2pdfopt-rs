@@ -1,0 +1,54 @@
+name: assets-check
+
+# Step 11.10 (v0.2 P1-1) - CI 三轨之 assets-check
+# 阻塞 gen-assets artifact drift：CLI surface 改了但 6 份 artifact
+# (5 shell completion + man page) 未重生 → CI 失败，PR 不可合并。
+# 必须先本地 `cargo run -p gen-assets --release` 重生后再 push。
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "crates/k2cli/**"
+      - "app/k2pdfopt/**"
+      - "tools/gen_assets/**"
+      - "completions/**"
+      - "docs/k2pdfopt-rs.1"
+      - ".github/workflows/assets-check.yml"
+  pull_request:
+    paths:
+      - "crates/k2cli/**"
+      - "app/k2pdfopt/**"
+      - "tools/gen_assets/**"
+      - "completions/**"
+      - "docs/k2pdfopt-rs.1"
+      - ".github/workflows/assets-check.yml"
+  workflow_dispatch:
+
+env:
+  CARGO_TERM_COLOR: always
+  RUST_BACKTRACE: short
+  CARGO_INCREMENTAL: 0
+  CARGO_NET_RETRY: 5
+  RUSTUP_MAX_RETRIES: 5
+
+jobs:
+  check:
+    name: gen-assets --check (ubuntu)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust toolchain (from rust-toolchain.toml)
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache cargo registry + target
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: k2pdfopt-rs
+          key: assets-check
+          save-if: ${{ github.ref == 'refs/heads/main' }}
+
+      - name: Run gen-assets --check (idempotency)
+        working-directory: k2pdfopt-rs
+        run: cargo run -p gen-assets --release --locked -- --check

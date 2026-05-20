@@ -1,0 +1,15 @@
+[package]
+name = "k2render"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "k2pdfopt-rs document rendering backends: MuPDF / mutool / Ghostscript / DjVu"
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow = "1"
+thiserror = "1"
+k2types = { path = "../k2types" }

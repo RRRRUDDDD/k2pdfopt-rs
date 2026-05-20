@@ -1,0 +1,10 @@
+{
+  "fixture": "encrypted",
+  "c_output_pages": 1,
+  "c_output_bytes": 68854,
+  "c_output_md5": "afbb9c64f0f4aa02aa11d8071ea25a83",
+  "k2pdfopt_version": "k2pdfopt v2.55 (w/MuPDF,DjVuLibre,OCR) (c) 2023, GPLv3, http://willus.com",
+  "mutool_version": "mutool version 1.27.0",
+  "generated_at": "unix+1778565697",
+  "note": "encrypted fixture: pre-decrypted with mutool clean -p test -D before k2pdfopt"
+}

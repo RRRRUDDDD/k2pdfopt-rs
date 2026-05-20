@@ -1,0 +1,55 @@
+name: regression
+
+# Step 5.7 (M4.5) - SSIM 回归基础设施。
+# 当前阶段（M5 前）仅跑 self-compare sanity；M5 起切到 rust-vs-c。
+
+on:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    # 每周一 03:17 UTC 跑一次（avoid :00 同步流量）
+    - cron: '17 3 * * 1'
+
+env:
+  CARGO_TERM_COLOR: always
+  RUST_BACKTRACE: short
+  CARGO_INCREMENTAL: 0
+
+jobs:
+  regression:
+    name: SSIM regression (ubuntu)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install mutool (mupdf-tools)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y mupdf-tools
+          mutool -v || true
+
+      - name: Cache cargo registry + target
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: k2pdfopt-rs
+          key: regression
+          save-if: ${{ github.ref == 'refs/heads/main' }}
+
+      - name: Build compare_pages + run_regression
+        working-directory: k2pdfopt-rs
+        run: cargo build --release --bin compare_pages --bin run_regression --locked
+
+      - name: Run regression suite (self-compare sanity)
+        working-directory: k2pdfopt-rs
+        run: cargo run --release --bin run_regression -- --all --mode self
+
+      - name: Upload regression report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: regression-report
+          path: k2pdfopt-rs/tests/golden/_regression/
+          retention-days: 14

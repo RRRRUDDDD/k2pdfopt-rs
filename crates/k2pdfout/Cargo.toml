@@ -1,0 +1,22 @@
+[package]
+name = "k2pdfout"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "k2pdfopt-rs PDF output: bitmap PDF writer (lopdf wrapper), outline, optional invisible OCR layer"
+
+[lints]
+workspace = true
+
+[dependencies]
+k2types = { path = "../k2types" }
+k2settings = { path = "../k2settings" }
+lopdf = "0.40"
+image = { version = "0.25", default-features = false, features = ["jpeg", "png"] }
+flate2 = "1"
+anyhow = "1"
+thiserror = "1"
+
+[dev-dependencies]
+tempfile = "3"

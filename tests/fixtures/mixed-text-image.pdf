@@ -1,0 +1,51 @@
+%PDF-1.4
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [5 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Length 688 >>
+stream
+q
+0.9 g 330 500 180 140 re f 0 g
+330 500 180 140 re S
+330 470 m 510 640 l S
+BT /F1 14 Tf
+50 782 Td (Mixed text and image) Tj
+0 -18 Td (Fixture for k2pdfopt Rust rewrite) Tj
+0 -18 Td (1. paragraphs plus figure rectangles) Tj
+0 -18 Td (2. paragraphs plus figure rectangles) Tj
+0 -18 Td (3. paragraphs plus figure rectangles) Tj
+0 -18 Td (4. paragraphs plus figure rectangles) Tj
+0 -18 Td (5. paragraphs plus figure rectangles) Tj
+0 -18 Td (6. paragraphs plus figure rectangles) Tj
+0 -18 Td (7. paragraphs plus figure rectangles) Tj
+0 -18 Td (8. paragraphs plus figure rectangles) Tj
+0 -18 Td (9. paragraphs plus figure rectangles) Tj
+0 -18 Td (10. paragraphs plus figure rectangles) Tj
+ET
+Q
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R >> >> /Contents 4 0 R >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000191 00000 n 
+0000000930 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+1056
+%%EOF

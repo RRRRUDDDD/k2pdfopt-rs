@@ -1,0 +1,27 @@
+{
+  "path_a": "tests/golden\\skewed-scan\\c-output.pdf",
+  "path_b": "tests/golden\\skewed-scan\\c-output.pdf",
+  "dpi": 150,
+  "pages_a": 1,
+  "pages_b": 1,
+  "pages_compared": 1,
+  "overall_ssim": 1.0,
+  "pages": [
+    {
+      "page_index": 0,
+      "width_a": 510,
+      "height_a": 684,
+      "width_b": 510,
+      "height_b": 684,
+      "size_mismatch": false,
+      "ssim_mean": 1.0,
+      "diff": {
+        "mean_abs": 0.0,
+        "max_abs": 0,
+        "pct_gt10": 0.0,
+        "pct_gt30": 0.0,
+        "n_pixels": 348840
+      }
+    }
+  ]
+}

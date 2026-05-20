@@ -1,0 +1,18 @@
+[package]
+name = "k2cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "k2pdfopt-rs CLI parsing, env merge and help text"
+
+[lints]
+workspace = true
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+k2settings = { path = "../k2settings" }
+shell-words = "1.1"
+
+[dev-dependencies]
+clap = { version = "4", features = ["derive"] }

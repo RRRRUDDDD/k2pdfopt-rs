@@ -1,0 +1,25 @@
+[package]
+name = "k2pipeline"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+description = "k2pdfopt-rs document-level orchestration and library API surface"
+
+[lints]
+workspace = true
+
+[dependencies]
+k2types = { path = "../k2types" }
+k2settings = { path = "../k2settings" }
+k2render = { path = "../k2render" }
+k2layout = { path = "../k2layout" }
+k2pdfout = { path = "../k2pdfout" }
+k2ocr = { path = "../k2ocr" }
+anyhow = "1"
+thiserror = "1"
+
+[dev-dependencies]
+tempfile = "3"
+lopdf = "0.40"
+k2settings = { path = "../k2settings" }

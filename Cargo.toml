@@ -1,0 +1,42 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/k2cli",
+    "crates/k2settings",
+    "crates/k2types",
+    "crates/k2io",
+    "crates/k2core",
+    "crates/k2layout",
+    "crates/k2render",
+    "crates/k2ocr",
+    "crates/k2pdfout",
+    "crates/k2pipeline",
+    "app/k2pdfopt",
+    "tools/run_c_baseline",
+    "tools/compare_pages",
+    "tools/run_regression",
+    "tools/gen_assets",
+]
+# Spike sandboxes are independent experiments and must NOT enter the main workspace.
+# Step 0.1 ~ 0.5 deliverables live under spikes/ and will be discarded post-M0.
+exclude = ["spikes"]
+
+[workspace.package]
+version = "0.2.0"
+edition = "2021"
+license = "AGPL-3.0-or-later"
+rust-version = "1.75"
+authors = ["k2pdfopt-rs contributors"]
+repository = "https://github.com/willus/k2pdfopt-rs"
+description = "Rust rewrite of k2pdfopt - reflow PDFs for e-readers"
+
+[workspace.lints.clippy]
+# 与 ADR-008 / clippy.toml 同步：禁止 unwrap/expect 进入产品代码（test/spike 例外）
+unwrap_used = "warn"
+expect_used = "warn"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+opt-level = 3
+debug = 1

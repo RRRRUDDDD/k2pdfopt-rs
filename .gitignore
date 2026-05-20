@@ -1,0 +1,67 @@
+# ─── Rust / Cargo ────────────────────────────────────────
+/target/
+**/target/
+**/*.rs.bk
+Cargo.lock.bak
+
+# ─── IDE / 编辑器 ────────────────────────────────────────
+.vscode/
+.idea/
+.fleet/
+*.swp
+*.swo
+*~
+
+# ─── 操作系统 ────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── AI 工具配置（开发期工件，不公开） ───────────────────
+.claude/
+.cursor/
+.cursorrules
+.aider*
+.windsurf/
+.ace-tool/
+.fast-context/
+.ccg/
+
+# ─── Spike 沙箱（M0 实验项目，整目录不推送） ─────────────
+spikes/
+
+# ─── Release 内部说明（含开发期 milestone 编号） ─────────
+RELEASE_NOTES.md
+
+# ─── 内部开发文档（ADR / 计划修订 / 性能报告 / man 草稿） ─
+docs/
+
+# ─── C 版本二进制（参考用，不打包到 Rust 仓库） ──────────
+tools/k2pdfopt.exe
+
+# ─── 测试 fixture 临时文件 ───────────────────────────────
+tests/fixtures/*.pdf.tmp
+tests/fixtures/*.bak
+
+# ─── Golden baseline 中间产物 ────────────────────────────
+tests/golden/**/c-pages/
+tests/golden/**/scratch/
+
+# ─── Profiling / 调试 ────────────────────────────────────
+*.profraw
+*.prof
+flamegraph.svg
+*.heaptrack.zst
+
+# ─── 文档构建 ────────────────────────────────────────────
+/docs/_build/
+/book/
+
+# ─── CI 本地缓存 ─────────────────────────────────────────
+.act/
+
+# ─── 临时文件 / 备份 ─────────────────────────────────────
+*.bak
+*.tmp
+*.orig
+*.rej
